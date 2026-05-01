@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sol-5 Incremental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sol-5 Incremental</h1>
+            <p class="subtitle">Journey to the distant sun...</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Panel: Currency Display -->
+            <div class="panel currency-panel">
+                <h2>Resources</h2>
+                <div class="currency-display">
+                    <div class="currency-item">
+                        <span class="currency-label">Energy</span>
+                        <span class="currency-value" id="energy">0</span>
+                        <span class="currency-unit">⚡</span>
+                    </div>
+                    <div class="currency-item">
+                        <span class="currency-label">Matter</span>
+                        <span class="currency-value" id="matter">0</span>
+                        <span class="currency-unit">🪨</span>
+                    </div>
+                    <div class="currency-item">
+                        <span class="currency-label">Light-Years</span>
+                        <span class="currency-value" id="lightYears">0</span>
+                        <span class="currency-unit">💫</span>
+                    </div>
+                    <div class="currency-item prestige-currency">
+                        <span class="currency-label">Essence</span>
+                        <span class="currency-value" id="essence">0</span>
+                        <span class="currency-unit">✨</span>
+                    </div>
+                    <div class="currency-item prestige-currency">
+                        <span class="currency-label">Celestial Shards</span>
+                        <span class="currency-value" id="shards">0</span>
+                        <span class="currency-unit">💎</span>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <h3>Progress to Sol-5</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text"><span id="progressPercent">0</span>% Complete</p>
+                </div>
+            </div>
+
+            <!-- Center Panel: Generators & Upgrades -->
+            <div class="panel main-panel">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="generators">Generators</button>
+                    <button class="tab-btn" data-tab="upgrades">Upgrades</button>
+                    <button class="tab-btn" data-tab="prestige">Prestige</button>
+                </div>
+
+                <!-- Generators Tab -->
+                <div class="tab-content active" id="generators-tab">
+                    <h2>Generators</h2>
+                    <div id="generators-container" class="generators-container"></div>
+                </div>
+
+                <!-- Upgrades Tab -->
+                <div class="tab-content" id="upgrades-tab">
+                    <h2>Upgrades</h2>
+                    <div id="upgrades-container" class="upgrades-container"></div>
+                </div>
+
+                <!-- Prestige Tab -->
+                <div class="tab-content" id="prestige-tab">
+                    <h2>Prestige Layers</h2>
+                    <div class="prestige-section">
+                        <h3>Layer 1: Energy Prestige</h3>
+                        <p class="prestige-info">Reset your progress to gain Essence multipliers</p>
+                        <div class="prestige-stats">
+                            <p>Current Essence: <span id="essenceDisplay">0</span></p>
+                            <p>Next gain: <span id="essenceGain">0</span> Essence</p>
+                        </div>
+                        <button class="prestige-btn" id="prestigeBtn1">Prestige (Layer 1)</button>
+                    </div>
+
+                    <div class="prestige-section">
+                        <h3>Layer 2: Cosmic Prestige</h3>
+                        <p class="prestige-info">Reset Essence to gain Celestial Shards and unlock cosmic powers</p>
+                        <div class="prestige-stats">
+                            <p>Current Shards: <span id="shardsDisplay">0</span></p>
+                            <p>Next gain: <span id="shardsGain">0</span> Shards</p>
+                            <p>Requirements: 10 Essence needed</p>
+                        </div>
+                        <button class="prestige-btn" id="prestigeBtn2" disabled>Prestige (Layer 2)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Stats & Info -->
+            <div class="panel info-panel">
+                <h2>Statistics</h2>
+                <div class="stats-display">
+                    <div class="stat-item">
+                        <span class="stat-label">Energy/sec</span>
+                        <span class="stat-value" id="energyPerSec">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Matter/sec</span>
+                        <span class="stat-value" id="matterPerSec">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Light-Years/sec</span>
+                        <span class="stat-value" id="lyPerSec">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Essence Multiplier</span>
+                        <span class="stat-value" id="essenceMultiplier">1x</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Shard Multiplier</span>
+                        <span class="stat-value" id="shardMultiplier">1x</span>
+                    </div>
+                </div>
+
+                <div class="actions-section">
+                    <h3>Actions</h3>
+                    <button id="clickBtn" class="click-btn">Click for Energy</button>
+                    <p class="click-info">+<span id="clickValue">1</span> Energy per click</p>
+                </div>
+
+                <div class="save-section">
+                    <h3>Game Data</h3>
+                    <button id="saveBtn">Save Game</button>
+                    <button id="loadBtn">Load Game</button>
+                    <button id="resetBtn">Hard Reset</button>
+                    <p class="save-info" id="saveInfo"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
