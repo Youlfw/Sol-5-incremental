@@ -84,7 +84,7 @@ Reset your Essence to gain **Celestial Shards**!
 
 ## 🎊 How to Play
 
-1. Open index.html in your browser
+1. Open the link
 2. Click to earn Energy
 3. Buy generators for passive income
 4. Purchase upgrades to boost production
